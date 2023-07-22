@@ -23,7 +23,7 @@ const headers: PanelCollection<IDockviewPanelHeaderProps> = {
   },
 };
 
-const Component = () => {
+function Editor() {
   const onReady = (event: DockviewReadyEvent) => {
     event.api.addPanel({
       id: 'panel1',
@@ -47,4 +47,4 @@ const Component = () => {
   );
 };
 
-export default Component;
+export default Editor;
