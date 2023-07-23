@@ -4,6 +4,7 @@ import {
   PanelCollection,
   IDockviewPanelProps,
   IDockviewPanelHeaderProps,
+  IDockviewPanel,
 } from 'dockview';
 
 const components: PanelCollection<IDockviewPanelProps> = {
@@ -25,16 +26,25 @@ const headers: PanelCollection<IDockviewPanelHeaderProps> = {
 
 function Editor() {
   const onReady = (event: DockviewReadyEvent) => {
-    event.api.addPanel({
+    const panel1 : IDockviewPanel = event.api.addPanel({
       id: 'panel1',
       component: 'default',
-      params: { someProps: 'Hello', },
+      params: {
+        title: 'Project Explorer',
+        someProps: 'Hello',
+      },
     });
-    event.api.addPanel({
+    const panel2 : IDockviewPanel = event.api.addPanel({
       id: 'panel2',
       component: 'default',
-      params: { someProps: 'World', },
-      position: { referencePanel: 'panel1', direction: 'below' },
+      params: {
+        title: 'Code Editor',
+        someProps: 'World',
+      },
+      position: { referencePanel: 'panel1', direction: 'right' },
+    });
+    panel1.api.setSize({
+      width: 350,
     });
   };
 
