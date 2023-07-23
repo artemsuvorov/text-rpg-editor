@@ -3,55 +3,54 @@ import {
   DockviewReadyEvent,
   PanelCollection,
   IDockviewPanelProps,
-  IDockviewPanelHeaderProps,
   IDockviewPanel,
 } from 'dockview';
 
 const components: PanelCollection<IDockviewPanelProps> = {
   default: (props: IDockviewPanelProps<{ someProps: string }>) => {
-    return <div>{props.params.someProps}</div>;
-  },
-};
-
-const headers: PanelCollection<IDockviewPanelHeaderProps> = {
-  customTab: (props: IDockviewPanelHeaderProps) => {
     return (
-      <div>
-        <span>{props.api.title}</span>
-        <span onClick={() => props.api.close()}>{'[x]'}</span>
+      <div className="p-3">
+        Hello World!
       </div>
     );
   },
+  codeEditor: (props: IDockviewPanelProps<{ someProps: string }>) => {
+    return (
+      <div className="p-3 w-100 h-100"> 
+        <textarea className="w-100 h-100" 
+          style={{ fontFamily: 'consolas', fontSize: '18px' }}>
+          {
+            '# Code Editor\n' +
+            '# Enter your Code here!\n\n' +
+            'Start Scene\n' +
+              'Message Hello, World!\n' +
+            'End Scene\n'
+          }
+        </textarea>
+      </div>
+    );
+  }
+};
+
+function onReady(event: DockviewReadyEvent) {
+  const panel1 : IDockviewPanel = event.api.addPanel({
+    id: 'panel1',
+    title: 'Project Explorer',
+    component: 'default',
+  });
+  const panel2 : IDockviewPanel = event.api.addPanel({
+    id: 'panel2',
+    title: 'Code Editor',
+    component: 'codeEditor',
+    position: { referencePanel: 'panel1', direction: 'right' },
+  });
+  panel1.api.setSize({ width: 350 });
 };
 
 function Editor() {
-  const onReady = (event: DockviewReadyEvent) => {
-    const panel1 : IDockviewPanel = event.api.addPanel({
-      id: 'panel1',
-      component: 'default',
-      params: {
-        title: 'Project Explorer',
-        someProps: 'Hello',
-      },
-    });
-    const panel2 : IDockviewPanel = event.api.addPanel({
-      id: 'panel2',
-      component: 'default',
-      params: {
-        title: 'Code Editor',
-        someProps: 'World',
-      },
-      position: { referencePanel: 'panel1', direction: 'right' },
-    });
-    panel1.api.setSize({
-      width: 350,
-    });
-  };
-
   return (
     <DockviewReact
       components={components}
-      tabComponents={headers} // optional headers renderer
       onReady={onReady}
     />
   );
