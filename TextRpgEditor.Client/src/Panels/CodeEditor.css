@@ -1,22 +1,33 @@
+.vertical-line-numbers {
+  font-family: 'consolas';
+  font-size: 18px;
+}
+
 #code-editor {
   font-family: 'consolas';
   font-size: 18px;
+
+  background: transparent;
+
   border: none;
   border-style: none;
   border-color: transparent;
+
+  outline: none;
   resize: none;
-  background: transparent;
+  
+  overflow-x: scroll;
+  overflow-y: scroll;
+  
+  appearance: none;
   -webkit-appearance: none;
   -moz-apperarance: none;
   -ms-appearance: none;
   -o-appearance: none;
-  appearance: none;
-  outline: none;
-  padding: 20px 40px 20px 40px;
-  overflow: hidden;
+  
+  box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
   -o-box-shadow: none;
-  box-shadow: none;
 }
