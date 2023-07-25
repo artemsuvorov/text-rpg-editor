@@ -7,17 +7,11 @@ import {
 } from 'dockview';
 
 import CodeEditor from './Panels/CodeEditor';
+import Explorer from './Panels/Explorer';
 
 const components: PanelCollection<IDockviewPanelProps> = {
-  default: (props: IDockviewPanelProps<{ someProps: string }>) => {
-    return (
-      <div className="p-3 w-100 h-100 bg-dark">
-        <ul>
-          <li>Scene1</li>
-          <li>Scene2</li>
-        </ul>
-      </div>
-    );
+  projectExplorer: (props: IDockviewPanelProps<{ someProps: string }>) => {
+    return <Explorer />;
   },
   codeEditor: (props: IDockviewPanelProps<{ someProps: string }>) => {
     return <CodeEditor />;
@@ -28,7 +22,7 @@ function onReady(event: DockviewReadyEvent) {
   const panel1 : IDockviewPanel = event.api.addPanel({
     id: 'panel1',
     title: 'Project Explorer',
-    component: 'default',
+    component: 'projectExplorer',
   });
   const panel2 : IDockviewPanel = event.api.addPanel({
     id: 'panel2',

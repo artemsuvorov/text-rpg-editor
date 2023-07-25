@@ -9,7 +9,7 @@ const SAMPLE_CODE: string =
 
 function CodeEditor() {
   return (
-    <div className="p-3 w-100 h-100"> 
+    <div className="w-100 h-100"> 
       <textarea id="code-editor" className="bg-dark w-100 h-100">
         { SAMPLE_CODE }
       </textarea>
