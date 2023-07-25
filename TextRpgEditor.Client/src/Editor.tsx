@@ -11,8 +11,11 @@ import CodeEditor from './Panels/CodeEditor';
 const components: PanelCollection<IDockviewPanelProps> = {
   default: (props: IDockviewPanelProps<{ someProps: string }>) => {
     return (
-      <div className="p-3">
-        Hello World!
+      <div className="p-3 w-100 h-100 bg-dark">
+        <ul>
+          <li>Scene1</li>
+          <li>Scene2</li>
+        </ul>
       </div>
     );
   },
