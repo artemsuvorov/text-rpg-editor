@@ -1,0 +1,22 @@
+#code-editor {
+  font-family: 'consolas';
+  font-size: 18px;
+  border: none;
+  border-style: none;
+  border-color: transparent;
+  resize: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-apperarance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: none;
+  padding: 20px 40px 20px 40px;
+  overflow: hidden;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}

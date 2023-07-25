@@ -6,6 +6,8 @@ import {
   IDockviewPanel,
 } from 'dockview';
 
+import CodeEditor from './Panels/CodeEditor';
+
 const components: PanelCollection<IDockviewPanelProps> = {
   default: (props: IDockviewPanelProps<{ someProps: string }>) => {
     return (
@@ -15,20 +17,7 @@ const components: PanelCollection<IDockviewPanelProps> = {
     );
   },
   codeEditor: (props: IDockviewPanelProps<{ someProps: string }>) => {
-    return (
-      <div className="p-3 w-100 h-100"> 
-        <textarea className="w-100 h-100" 
-          style={{ fontFamily: 'consolas', fontSize: '18px' }}>
-          {
-            '# Code Editor\n' +
-            '# Enter your Code here!\n\n' +
-            'Start Scene\n' +
-              'Message Hello, World!\n' +
-            'End Scene\n'
-          }
-        </textarea>
-      </div>
-    );
+    return <CodeEditor />;
   }
 };
 
