@@ -6,12 +6,16 @@ const SAMPLE_CODE: string =
   '# Enter your Code here!\n\n' +
   'Start Scene\n' +
   '  Message Hello, World!\n' +
+  '  Message Hello, World!\n' +
+  '  Message Hello, World!\n' +
+  '  Message Hello, World!\n' +
+  '  Message Hello, World!\n' +
   'End Scene';
 
 function renderLineNumbers(text: string) {
   var index = 1;
   return (
-    <ul className="text-muted">
+    <ul className="text-muted text-end px-3">
       {
         text.split('\n').map(line =>
           <li className="list-group-item" key={index}>{index++}</li>)
@@ -37,8 +41,9 @@ function CodeEditor() {
   // TODO: fix horizontal and vertical scroll bars
   return (
     <div className="w-100 h-100 container d-flex flex-column">
-      <div className="row bg-dark flex-grow-1 vertical-auto-scroll">
-        <div className="vertical-line-numbers col-2 p-2" ref={lineNumbersRef}>
+      <div className="row flex-grow-1 vertical-auto-scroll">
+        {/* TODO: resize line numbers bar when number count is large */}
+        <div className="vertical-line-numbers p-2" ref={lineNumbersRef}>
           { renderLineNumbers(text) }
         </div>
         <div className="col d-flex flex-row flex-column resize-horizontal">

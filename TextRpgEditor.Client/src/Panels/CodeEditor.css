@@ -5,6 +5,7 @@
 .vertical-line-numbers {
   font-family: 'consolas';
   font-size: 18px;
+  width: 80px;
 }
 
 #code-editor {
