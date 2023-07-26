@@ -1,6 +1,12 @@
+#code-editor-container {
+  overflow-y: auto;
+}
+
 .vertical-line-numbers {
   font-family: 'consolas';
   font-size: 18px;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 #code-editor {
@@ -16,8 +22,9 @@
   outline: none;
   resize: none;
   
-  overflow-x: scroll;
-  overflow-y: scroll;
+  overflow-wrap: normal;
+  overflow-x: hidden;
+  overflow-y: hidden;
   
   appearance: none;
   -webkit-appearance: none;
