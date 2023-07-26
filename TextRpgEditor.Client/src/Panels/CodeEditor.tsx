@@ -6,15 +6,15 @@ const SAMPLE_CODE: string =
   '# Enter your Code here!\n\n' +
   'Start Scene\n' +
   '  Message Hello, World!\n' +
-  'End Scene\n';
+  'End Scene';
 
 function renderLineNumbers(text: string) {
   var index = 1;
   return (
-    <ul>
+    <ul className="text-muted">
       {
         text.split('\n').map(line =>
-          <li className="list-group-item border-0 p-0" key={index}>{index++}</li>)
+          <li className="list-group-item" key={index}>{index++}</li>)
       }
     </ul>
   );
@@ -34,16 +34,19 @@ function CodeEditor() {
     console.log(lineNumbersRef.current.scrollTop, target.scrollTop);
   }
 
+  // TODO: fix horizontal and vertical scroll bars
   return (
     <div className="w-100 h-100 container d-flex flex-column">
-      <div id="code-editor-container" className="row h-100">
+      <div className="row bg-dark flex-grow-1 vertical-auto-scroll">
         <div className="vertical-line-numbers col-2 p-2" ref={lineNumbersRef}>
           { renderLineNumbers(text) }
         </div>
-        <div className="col d-flex flex-column">
-          <textarea id="code-editor" className="row bg-dark flex-grow-1 p-2"
-            ref={textAreaRef} value={text} 
-            onChange={(event) => setText(event.target.value)} 
+        <div className="col d-flex flex-row flex-column resize-horizontal">
+          <textarea id="code-editor" 
+            className="row bg-dark flex-grow-1 pt-2 px-2"
+            spellCheck="false" autoCorrect="off" autoCapitalize="none" wrap="off"
+            ref={textAreaRef} value={text}
+            onChange={(event) => setText(event.target.value)}
             onScroll={onTextAreaScroll} />
         </div>
       </div>
