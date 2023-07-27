@@ -41,7 +41,7 @@ function CodeEditor() {
   // TODO: fix horizontal and vertical scroll bars
   return (
     <div className="w-100 h-100 container d-flex flex-column">
-      <div className="row flex-grow-1 vertical-auto-scroll">
+      <div className="row bg-dark flex-grow-1 vertical-auto-scroll">
         {/* TODO: resize line numbers bar when number count is large */}
         <div className="vertical-line-numbers p-2" ref={lineNumbersRef}>
           { renderLineNumbers(text) }
