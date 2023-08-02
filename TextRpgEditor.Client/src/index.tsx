@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import 'dockview/dist/styles/dockview.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 import Home from './Home';
 import Editor from './Editor';
@@ -20,16 +21,16 @@ root.render(
 
     <BrowserRouter>
       <div className="vh-100 d-flex flex-column px-2">
-        <div className="flex-column justify-content-center">
-          <Navbar mode={AppMode.Home} />
-        </div>
+          <div className="flex-column justify-content-center">
+            <Navbar />
+          </div>
 
-        <div className="flex-column justify-content-center flex-grow-1 overflow-auto">
-          <Routes>
-            <Route path="/" element={<Home />}/>
-            <Route path="/editor" element={<Editor />}/>
-          </Routes>
-        </div>
+          <div className="flex-column justify-content-center flex-grow-1 overflow-auto">
+            <Routes>
+              <Route path="/" element={<Home />}/>
+              <Route path="/editor" element={<Editor />}/>
+            </Routes>
+          </div>
 
         <div className="flex-column justify-content-center">
           <Footer />

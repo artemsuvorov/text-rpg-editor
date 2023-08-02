@@ -28,7 +28,7 @@ function onReady(event: DockviewReadyEvent) {
     id: 'panel2',
     title: 'Code Editor',
     component: 'codeEditor',
-    position: { referencePanel: 'panel1', direction: 'right' },
+    position: { referencePanel: 'panel1', direction: 'left' },
   });
   panel1.api.setSize({ width: 350 });
 };

@@ -1,4 +1,0 @@
-enum AppMode {
-  Home,
-  Editor
-}
