@@ -1,4 +1,6 @@
-function Navbar() {
+import EditorButtons from "./EditorButtons";
+
+function Navbar(mode: AppMode) {
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark justify-content-between p-3">
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,6 +16,7 @@ function Navbar() {
             <a className="nav-link active" href="/editor">Editor</a>
           </li>
         </ul>
+        <EditorButtons />
       </div>
 
       <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">

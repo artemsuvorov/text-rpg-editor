@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import 'dockview/dist/styles/dockview.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from './Home';
 import Editor from './Editor';
@@ -20,8 +20,8 @@ root.render(
 
     <BrowserRouter>
       <div className="vh-100 d-flex flex-column px-2">
-        <div className="flex-column justify-content-center">        
-          <Navbar />
+        <div className="flex-column justify-content-center">
+          <Navbar mode={AppMode.Home} />
         </div>
 
         <div className="flex-column justify-content-center flex-grow-1 overflow-auto">
@@ -33,9 +33,9 @@ root.render(
 
         <div className="flex-column justify-content-center">
           <Footer />
-        </div> 
-      </div>      
-    </BrowserRouter>    
+        </div>
+      </div>
+    </BrowserRouter>
 
   </React.StrictMode>
 );
